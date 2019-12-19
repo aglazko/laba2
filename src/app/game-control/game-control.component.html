@@ -1,0 +1,13 @@
+<button (click)="start()">Start</button><br><br>
+<button (click)="stop()">Stop</button><br><br>
+
+<div>HEY {{ res }}</div>
+<!--<div>{{ res1 }}</div>-->
+<!--<div *ngFor="let even of even"><app-even></app-even></div>-->
+<!--<div *ngFor="let odd of odd"><app-odd></app-odd></div>-->
+<!--&& oe != 0  -->
+<div *ngFor="let oe of odd_even">
+  <div *ngIf="oe % 2 == 1; then thenBlock else elseBlock"></div>
+  <ng-template #thenBlock><app-odd></app-odd></ng-template>
+  <ng-template #elseBlock><app-even></app-even></ng-template>
+</div>
